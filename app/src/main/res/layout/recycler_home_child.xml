@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    
+    <RelativeLayout
+        android:background="@color/newbackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvHeader"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:background="@color/newbackground"
+            android:paddingStart="6dp"
+            android:gravity="start"
+            android:fontFamily="@font/arial_regular"
+            android:text="header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="RtlSymmetry" />
+
+    <TextView
+        android:id="@+id/tvViewAll"
+        android:textColor="@color/yellow"
+        android:textSize="15sp"
+        android:text="View All"
+        android:fontFamily="@font/arial_regular"
+        android:background="@color/newbackground"
+        android:paddingEnd="6dp"
+        android:visibility="invisible"
+        android:layout_alignParentRight="true"
+        android:gravity="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:layout_below="@+id/tvHeader"
+           android:id="@+id/recyclerChild"
+           android:clipToPadding="false"
+           android:paddingTop="14dp"
+           android:paddingBottom="14dp"
+           android:background="@color/newbackground"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+       </androidx.recyclerview.widget.RecyclerView>
+
+    </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+

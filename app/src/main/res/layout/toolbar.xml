@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/topLayout"
+        android:background="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal" >
+        <ImageView
+            android:layout_gravity="start"
+            android:layout_marginStart="10dp"
+            android:src=""
+            android:layout_width="100dp"
+            android:layout_height="match_parent"/>
+
+        <ImageView
+            android:id="@+id/imgSearch"
+            android:layout_marginStart="200dp"
+            android:layout_width="40dp"
+            android:padding="3dp"
+            android:layout_toStartOf="@+id/profile"
+            android:src="@drawable/btn_serch"
+            android:layout_height="match_parent"/>
+
+        <ImageView
+            android:id="@+id/profile"
+            android:layout_marginStart="10dp"
+            android:layout_width="40dp"
+            android:padding="3dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="25dp"
+            android:src="@drawable/btn_profile"
+            android:layout_height="match_parent"/>
+
+        <!--        <ImageView-->
+        <!--            android:id="@+id/Logout"-->
+        <!--            android:layout_marginStart="10dp"-->
+        <!--            android:layout_width="40dp"-->
+        <!--            android:padding="3dp"-->
+        <!--            android:visibility="gone"-->
+        <!--            android:src="@drawable/btn_exit"-->
+        <!--            android:layout_height="match_parent"/>-->
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

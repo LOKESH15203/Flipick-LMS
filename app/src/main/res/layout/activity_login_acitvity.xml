@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginAcitvity"
+    android:background="@color/lcolor">
+
+    <LinearLayout
+        android:id="@+id/signUp_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/signUp_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SignUP"
+            android:textColor="@color/lcolor"
+            android:background="@drawable/heading_design"
+            android:layout_marginTop="70dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:textAlignment="center"
+            android:fontFamily="@font/rowdies_regular"
+            android:textSize="70dp"
+            />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/edit_text_design"
+            android:drawableEnd="@drawable/btn_search"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/secular_one"
+            android:hint="  Name"
+            android:padding="15dp"
+            android:textColor="@color/white"
+            android:textColorHint="#DDDADA"
+            android:textSize="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signUp_head" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/secular_one"
+            android:textSize="20dp"
+            android:hint="  Email"
+            android:drawableEnd="@drawable/email_img"
+            android:textColorHint="#DDDADA"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/college_Id"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/edit_text_design"
+            android:padding="15dp"
+            />
+
+        <EditText
+            android:id="@+id/college_Id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/secular_one"
+            android:textSize="20dp"
+            android:hint="  College ID"
+            android:drawableEnd="@drawable/id_img"
+            android:textColorHint="#DDDADA"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/college_Id"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/edit_text_design"
+            android:padding="15dp"
+            />
+
+        <EditText
+            android:id="@+id/passText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/secular_one"
+            android:textSize="20dp"
+            android:hint="  Password"
+            android:drawableEnd="@drawable/key_img"
+            android:textColorHint="#DDDADA"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/college_Id"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/edit_text_design"
+            android:padding="15dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signup_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginRight="120dp"
+            android:fontFamily="@font/secular_one"
+            android:background="@drawable/button_shape"
+            android:padding="15dp"
+            android:text="Sign UP"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/passText"
+            />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/login_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+
+        <ImageView
+            android:id="@+id/login_img"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:src="@drawable/login_img"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/login_college_Id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/edit_text_design"
+            android:drawableEnd="@drawable/btn_search"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/secular_one"
+            android:hint="  College Id"
+            android:padding="15dp"
+            android:textColor="@color/white"
+            android:textColorHint="#DDDADA"
+            android:textSize="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/login_img" />
+
+        <EditText
+            android:id="@+id/login_passText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/secular_one"
+            android:textSize="20dp"
+            android:hint="  Password"
+            android:drawableEnd="@drawable/key_img"
+            android:textColorHint="#DDDADA"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/college_Id"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/edit_text_design"
+            android:padding="15dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/login_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginRight="120dp"
+            android:fontFamily="@font/secular_one"
+            android:background="@drawable/button_shape"
+            android:padding="15dp"
+            android:text="Log In"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/passText"
+            />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/dont_have_acc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginBottom="26dp"
+        android:fontFamily="@font/secular_one"
+        android:text="Don't have an account?"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/register_acc"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/register_acc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="72dp"
+        android:fontFamily="@font/secular_one"
+        android:text="Register"
+        android:textColor="#FFEB3B"
+        android:textSize="20sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/dont_have_acc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dont_have_acc"
+        app:layout_constraintTop_toTopOf="@+id/dont_have_acc"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/alreadyHave_acc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="@font/secular_one"
+        android:text="Already have an account?"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/login_acc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/secular_one"
+        android:onClick="send"
+        android:text="Login"
+        android:textColor="#FFC107"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/alreadyHave_acc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintStart_toEndOf="@+id/alreadyHave_acc"
+        app:layout_constraintTop_toTopOf="@+id/alreadyHave_acc" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

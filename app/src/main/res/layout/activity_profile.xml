@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".ProfileActivity">
+
+
+    <ImageView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src=""
+        android:id="@+id/imgLogo"
+        android:layout_marginStart="10dp"
+        android:layout_width="120dp"
+        android:layout_height="60dp"/>
+
+    <ImageView
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/btn_exit"
+        android:id="@+id/img_logout"
+        android:layout_marginEnd="25dp"
+        android:layout_width="40dp"
+        android:layout_height="60dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgLogo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="#0A1014"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="100dp"
+        android:layout_width="300dp"
+        android:id="@+id/constraintLayout"
+        android:background="@color/black"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/rel_profileImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="#FFCCCCCC"
+            android:layout_marginTop="40dp"
+            android:layout_width="300dp"
+            android:layout_height="180dp">
+            <ImageView
+                android:id="@+id/profileImage"
+                android:background="#FFCCCCCC"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <ImageView
+                android:id="@+id/btn_camera"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="#FFCCCCCC"
+                android:src="@drawable/ic_camera"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/profileImage"
+                tools:ignore="ContentDescription" />
+        </RelativeLayout>
+
+
+
+        <TextView
+            android:id="@+id/textEmail"
+            android:text="Email/Mobile No."
+            android:textAllCaps="true"
+            android:fontFamily="@font/source_sanspro_bold"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rel_profileImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/text_Email"
+            android:textAllCaps="true"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <View
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="10dp"
+            android:id="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/text_Email"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="1dp"/>
+
+        <TextView
+            android:id="@+id/textFirstName"
+            android:text="First name"
+            android:textAllCaps="true"
+            android:visibility="visible"
+            android:fontFamily="@font/source_sanspro_bold"            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rel_profileImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/textFirst_Name"
+            android:textAllCaps="true"
+            android:visibility="visible"
+        android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/white"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:id="@+id/lastName"
+            android:text="Last Name"
+            android:textAllCaps="true"
+            android:visibility="visible"
+            android:fontFamily="@font/source_sanspro_bold"            android:textColor="@color/white"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/text_lastName"
+            android:textAllCaps="true"
+android:fontFamily="@font/source_sans_pro_regular"
+            android:layout_marginStart="10dp"
+            android:visibility="visible"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:id="@+id/textMobile"
+            android:text="Email/Mobile No."
+            android:textAllCaps="true"
+            android:visibility="gone"
+            android:fontFamily="@font/source_sanspro_bold"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/text_mobile"
+            android:textAllCaps="true"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:layout_marginEnd="10dp"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textMobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/btn_edit"
+        android:fontFamily="@font/source_sanspro_bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="edit"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:background="@drawable/button_shape"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        android:layout_width="90dp"
+        android:gravity="center"
+        android:layout_height="40dp"/>
+
+    <ProgressBar
+        android:id="@+id/progressBarProfile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

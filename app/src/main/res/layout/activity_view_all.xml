@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/newbackground"
+    tools:context=".ViewAllActivity">
+
+<include
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    layout="@layout/toolbar"
+    android:id="@+id/allDetailsToolBarLayout"
+    />
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_season"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/allDetailsToolBarLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewAllPager"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/black"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:context=".MainActivity" />
+
+            <me.relex.circleindicator.CircleIndicator
+                android:id="@+id/viewAllindicator"
+                android:layout_width="wrap_content"
+                android:layout_height="37dp"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                app:ci_drawable="@drawable/dot_grey"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewAllPager" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewAllindicator"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/source_sans_pro_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvBack"
+                app:layout_constraintTop_toBottomOf="@+id/viewAllindicator"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="20dp"
+                android:textColor="@color/yellow"
+                android:text="Back"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/source_sans_pro_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_viewAll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/full_transparent"
+                android:paddingBottom="10dp"
+                android:scrollbars="none"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvBack" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
