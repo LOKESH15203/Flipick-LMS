@@ -99,7 +99,7 @@ class ProfileActivity : AppCompatActivity() {
     {
         val stringRequest: StringRequest = @SuppressLint("NotifyDataSetChanged")
         object : StringRequest(
-            Method.GET, Api.baseUrl +"User/GetUserDetailsByMail?EmailId="+instanceShared!!.phone+"&requestFrom=angular",
+            Method.GET, Api.baseUrl +"User/GetUserDetailsByMail?EmailId="+ instanceShared?.email.toString()+"&requestFrom=angular",
             Response.Listener { response ->
                 try {
                     val jsonObject= JSONObject(response)

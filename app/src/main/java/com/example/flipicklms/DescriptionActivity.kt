@@ -54,7 +54,7 @@ class DescriptionActivity : AppCompatActivity() {
     var adUrl: String = ""
 
     private var simpleExoPlayer_: ExoPlayer? = null
-    private lateinit var playerView_: PlayerView
+//    private lateinit var playerView_: PlayerView
     lateinit var mainImage:ImageView
     lateinit var profileImage: ImageView
     lateinit var progressBar:ProgressBar
@@ -87,8 +87,8 @@ class DescriptionActivity : AppCompatActivity() {
 
 
         profileImage = findViewById(R.id.profile)
-        playerView_ = findViewById(R.id.player)
-        mainImage=findViewById(R.id.mainImage)
+//        playerView_ = findViewById(R.id.player)
+//        mainImage=findViewById(R.id.mainImage)
         textTitle = findViewById(R.id.textTitle)
         btnPlay = findViewById(R.id.buttonPlay)
         buttonResume=findViewById(R.id.buttonResume)
@@ -100,7 +100,7 @@ class DescriptionActivity : AppCompatActivity() {
         textOverview = findViewById(R.id.textOverview)
         progressBar=findViewById(R.id.descriptionProgress)
         textCastandCrew = findViewById(R.id.textCastandCrew)
-        studentID = instanceShared!!.mobid.toString()
+//        studentID = instanceShared!!.mobid.toString()
         imgSearch=findViewById(R.id.imgSearch)
         courseID = intent.getStringExtra("course_id").toString()
         btnPlay.setOnClickListener {
@@ -345,7 +345,7 @@ class DescriptionActivity : AppCompatActivity() {
         val stringRequest: StringRequest = @SuppressLint("NotifyDataSetChanged")
         object : StringRequest(
             Method.GET,Api.baseUrl +
-            "LRS/getDetails18?mbox="+instanceShared!!.phone+"&verb=attempted&type=course&isShort=1&lrs=5a39a5a8580a00ad7f222356&CourseId="+courseId,
+            "LRS/getDetails18?mbox="+instanceShared!!.email+"&verb=attempted&type=course&isShort=1&lrs=5a39a5a8580a00ad7f222356&CourseId="+courseId,
             Response.Listener { response ->
                 try {
                     val jsonObject = JSONObject(response)
@@ -420,8 +420,8 @@ class DescriptionActivity : AppCompatActivity() {
             simpleExoPlayer_!!.release()
         }
         simpleExoPlayer_ = ExoPlayer.Builder(this).build()
-        playerView_.player = simpleExoPlayer_
-        playerView_.useController = false
+//        playerView_.player = simpleExoPlayer_
+//        playerView_.useController = false
 //        playerView_.subtitleView!!.setBottomPaddingFraction(0.17f)// #########################################################
 
         val defaultHttpDataSourceFactory = DefaultHttpDataSource.Factory()
@@ -434,7 +434,7 @@ class DescriptionActivity : AppCompatActivity() {
         } else {
             Log.d("zzz", "VideoUrl++++ mp4" + url)
             val mediaItem = MediaItem.fromUri(url)
-            playerView_.player = simpleExoPlayer_
+//            playerView_.player = simpleExoPlayer_
             simpleExoPlayer_!!.setMediaItem(mediaItem)
         }
         simpleExoPlayer_?.seekTo(0)

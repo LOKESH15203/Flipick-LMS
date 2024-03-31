@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/lcolor"
     tools:context=".DescriptionActivity">
     <RelativeLayout
         app:layout_constraintStart_toStartOf="parent"
@@ -14,12 +14,21 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal" >
-        <ImageView
-            android:layout_gravity="start"
-            android:layout_marginStart="10dp"
-            android:src=""
+
+        <TextView
+            android:id="@+id/titleLMS"
             android:layout_width="100dp"
-            android:layout_height="match_parent"/>
+            android:layout_height="40dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/rowdies_regular"
+            android:text="LMS"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imgSearch"
@@ -37,7 +46,8 @@
             android:layout_alignParentEnd="true"
             android:padding="3dp"
             android:layout_marginEnd="25dp"
-            android:src="@drawable/btn_profile"
+            android:background="@drawable/profile_img_design"
+            android:src="@drawable/profile_button_icon"
             android:layout_height="match_parent"/>
 
 <!--        <ImageView-->
@@ -106,7 +116,7 @@
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="6dp"/>
-    
+
     <androidx.appcompat.widget.AppCompatButton
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view"
@@ -195,7 +205,7 @@
         android:paddingBottom="400dp"
         android:id="@+id/recycler_details"
         android:layout_height="wrap_content"/>
-    
+
     <TextView
         app:layout_constraintStart_toEndOf="@+id/recycler_details"
         app:layout_constraintEnd_toEndOf="parent"

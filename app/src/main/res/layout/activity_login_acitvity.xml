@@ -49,7 +49,7 @@
             android:textSize="20dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/signUp_head" />
+            app:layout_constraintTop_toBottomOf="@id/signUp_head"/>
 
         <EditText
             android:id="@+id/email"
@@ -155,7 +155,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/login_college_Id"
+            android:id="@+id/login_Email_Phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
@@ -165,7 +165,7 @@
             android:drawableEnd="@drawable/btn_search"
             android:drawablePadding="10dp"
             android:fontFamily="@font/secular_one"
-            android:hint="  College Id"
+            android:hint="  Email/Phone No."
             android:padding="15dp"
             android:textColor="@color/white"
             android:textColorHint="#DDDADA"
@@ -273,6 +273,17 @@
         app:layout_constraintHorizontal_bias="0.101"
         app:layout_constraintStart_toEndOf="@+id/alreadyHave_acc"
         app:layout_constraintTop_toTopOf="@+id/alreadyHave_acc" />
+
+    <ProgressBar
+        android:id="@+id/progressHome"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="90dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

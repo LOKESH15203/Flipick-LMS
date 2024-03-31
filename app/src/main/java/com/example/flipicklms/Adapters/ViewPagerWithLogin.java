@@ -1,13 +1,3 @@
-/*
-
-###############################
-
-    PLAYER ACTIVITY
-
-###############################
-
- */
-
 package com.example.flipicklms.Adapters;
 
 import android.content.Context;
@@ -29,8 +19,9 @@ import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.example.flipicklms.DescriptionActivity;
 import com.example.flipicklms.MainActivity;
-import com.example.flipicklms.Resources.Data;
+import com.example.flipicklms.PlayerActivity;
 import com.example.flipicklms.R;
+import com.example.flipicklms.Resources.HomeModelWithLogin;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -40,13 +31,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ViewAllPagerAdapter extends PagerAdapter
+public class ViewPagerWithLogin extends PagerAdapter
 {
 
     private Context context;
-    private ArrayList<Data> arrayList;
+    private ArrayList<HomeModelWithLogin> arrayList;
 
-    public ViewAllPagerAdapter(Context context, ArrayList<Data> pager_modelArrayList) {
+    public ViewPagerWithLogin(Context context, ArrayList<HomeModelWithLogin> pager_modelArrayList) {
         this.context = context;
         arrayList = pager_modelArrayList;
     }
@@ -65,24 +56,30 @@ public class ViewAllPagerAdapter extends PagerAdapter
     public Object instantiateItem(ViewGroup container, int position) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.viewpager_layout, null);
-        Data currentItem = arrayList.get(position);
+        HomeModelWithLogin currentItem = arrayList.get(position);
         Log.d("zzz","ViewPagerAdapter:  "+arrayList.get(position));
         ImageView imageview = view.findViewById(R.id.imageView);
         ImageView imageviewPlay = view.findViewById(R.id.imgPlay);
         ImageView imageviewInfo = view.findViewById(R.id.imgInfo);
-
         TextView tvTitle=view.findViewById(R.id.pager_title);
         tvTitle.setText(currentItem.getCourseName());
         Glide.with(context).load(currentItem.getCourseThumbnail()).skipMemoryCache(true).into(imageview);
-
         imageviewPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 callApi(currentItem.getCourseId());
-
             }
         });
+
+//        if (currentItem.getIsPackage().equals("1"))
+//        {
+//            imageviewPlay.setVisibility(View.INVISIBLE);
+//        }
+//        else {
+//            imageviewPlay.setVisibility(View.VISIBLE);
+//        }
+
+
 
         imageviewInfo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,24 +100,24 @@ public class ViewAllPagerAdapter extends PagerAdapter
             }
         });
 
-
         imageview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent intent = new Intent(context, DescriptionActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.putExtra("videoUrl", currentItem.getVideoURL());
-                intent.putExtra("thumb", currentItem.getCourseThumbnail());
-                intent.putExtra("title", currentItem.getCourseName());
-                intent.putExtra("description", currentItem.getCourseDescription());
-                intent.putExtra("age", currentItem.getAgeGuidance());
-                intent.putExtra("duration", currentItem.getCourseHours());
+                 {
+                     Intent intent = new Intent(context, DescriptionActivity.class);
+                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                     intent.putExtra("videoUrl", currentItem.getVideoURL());
+                     intent.putExtra("thumb", currentItem.getCourseThumbnail());
+                     intent.putExtra("title", currentItem.getCourseName());
+                     intent.putExtra("description", currentItem.getCourseDescription());
+                     intent.putExtra("age", currentItem.getAgeGuidance());
+                     intent.putExtra("duration", currentItem.getCourseHours());
 //                    intent.putExtra("hd", content.ageGuidance)
 //                    intent.putExtra("age", content.ageGuidance)
-                intent.putExtra("course_id", currentItem.getCourseId());
+                     intent.putExtra("course_id", currentItem.getCourseId());
 //                intent.putExtra("student_id", sharedPrefManager.getMobid());
-                context.startActivity(intent);
+                     context.startActivity(intent);
+                }
             }
         });
 
@@ -138,6 +135,7 @@ public class ViewAllPagerAdapter extends PagerAdapter
         viewPager.removeView(view);
     }
 
+
     private void callApi(String courseID) {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://lms1.flipick.com/cmwebapi/api/StudentCourseHBI/GetInstituteCourseListByStudent2",
                 response -> {
@@ -146,12 +144,12 @@ public class ViewAllPagerAdapter extends PagerAdapter
                         JSONObject jsonObject1 = new JSONObject(response);
                         JSONArray jsonArray = jsonObject1.getJSONArray("StudentCourseList");
                         for (int i = 0; i < jsonArray.length(); i++) {
-//                            JSONObject jsonObjectItems = jsonArray.getJSONObject(i);
-//                            Intent intent = new Intent(context, PlayerActivity.class);
-//                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                            intent.putExtra("videoUrl",jsonObjectItems.getString("BookUrl") );
-//                            intent.putExtra("title", jsonObjectItems.getString("CourseName"));
-//                            context.startActivity(intent);
+                            JSONObject jsonObjectItems = jsonArray.getJSONObject(i);
+                            Intent intent = new Intent(context, PlayerActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            intent.putExtra("videoUrl",jsonObjectItems.getString("BookUrl") );
+                            intent.putExtra("title", jsonObjectItems.getString("CourseName"));
+                            context.startActivity(intent);
                         }
 
 
@@ -163,7 +161,7 @@ public class ViewAllPagerAdapter extends PagerAdapter
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
-//                params.put("StudentId" , MainActivity.Companion.getStudentID());
+                params.put("StudentId" , MainActivity.Companion.getStudentID());
                 params.put("CourseId" , courseID);
                 return params;
             }
@@ -172,6 +170,9 @@ public class ViewAllPagerAdapter extends PagerAdapter
         RequestQueue requestQueue = Volley.newRequestQueue(context);
         requestQueue.add(stringRequest);
     }
+
+
+
 
 
 }

@@ -7,7 +7,6 @@ import android.view.View
 import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
@@ -17,7 +16,6 @@ import com.example.flipicklms.Adapters.ViewAllAdapter
 import com.example.flipicklms.Adapters.ViewAllPagerAdapter
 import com.example.flipicklms.Resources.Data
 import com.example.flipicklms.Resources.SharedPrefManager
-import com.example.flipicklms.R
 import me.relex.circleindicator.CircleIndicator
 import java.util.ArrayList
 
@@ -116,7 +114,7 @@ class ViewAllActivity : AppCompatActivity() {
             showModel.courseId=MainActivity.dataModelArrayList[k].courseId
             showModel.courseSequence = MainActivity.dataModelArrayList[k].courseSequence
 
-                if (MainActivity.dataModelArrayList[k].featured=="1")
+                if (MainActivity.dataModelArrayList[k].featured.toString()=="1")
                 {
                     slider_modelArrayList.add(showModel)
                 }

@@ -1,3 +1,11 @@
+// #########################
+// #########################
+
+// .playVideo
+
+// #########################
+// #########################
+
 package com.example.flipicklms.Adapters;
 
 import android.app.Activity;
@@ -15,10 +23,10 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.flipicklms.DescriptionActivity;
 import com.example.flipicklms.R;
-import com.ninepmfilms.mobile.activity.DescriptionActivity;
+import com.example.flipicklms.Resources.Data;
 import com.example.flipicklms.MainActivity;
-import com.ninepmfilms.mobile.model.Data;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -89,7 +97,7 @@ public class SelectionListDataAdapterAfterLogin extends RecyclerView.Adapter<Sel
             @Override
             public void onClick(View view) {
 
-                ((MainActivity)mContext).playVideo(singleItem.getCourseId());
+//                ((MainActivity)mContext).playVideo(singleItem.getCourseId());
 
 
             }

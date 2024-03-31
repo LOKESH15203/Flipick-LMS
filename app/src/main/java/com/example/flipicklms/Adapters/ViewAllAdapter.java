@@ -7,6 +7,7 @@
 
 package com.example.flipicklms.Adapters;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -19,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
@@ -49,9 +51,10 @@ public class ViewAllAdapter extends RecyclerView.Adapter<ViewAllAdapter.SingleIt
         this.mContext = context;
     }
 
+    @NonNull
     @Override
     public SingleItemRowHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.reccycler_childs_child, null);
+        @SuppressLint("InflateParams") View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.reccycler_childs_child, null);
         SingleItemRowHolder mh = new SingleItemRowHolder(v);
         return mh;
     }
@@ -195,7 +198,15 @@ public class ViewAllAdapter extends RecyclerView.Adapter<ViewAllAdapter.SingleIt
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("StudentId" , MainActivity.Companion.getStudentID());
+                //################################################################################
+                //################################################################################
+                //################################################################################
+                //################################################################################
+//                params.put("StudentId" , MainActivity.Companion.getStudentID());
+                //################################################################################
+                //################################################################################
+                //################################################################################
+                //################################################################################
                 params.put("CourseId" , courseID);
                 return params;
             }

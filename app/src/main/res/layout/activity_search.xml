@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/newbackground"
+    tools:context=".SearchActivity">
+
+    <ImageView
+        android:src="@drawable/arrow_back"
+        android:layout_marginStart="12dp"
+        android:id="@+id/imageBack"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="30dp"
+        android:layout_height="50dp"/>
+    <LinearLayout
+        app:layout_constraintStart_toEndOf="@+id/imageBack"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/topBar"
+        android:orientation="horizontal"
+        android:layout_marginStart="4dp"
+        android:background="@drawable/text_shape"
+        android:layout_width="0dp"
+        android:layout_height="50dp">
+        <EditText
+            android:background="@drawable/text_shape"
+            android:layout_width="match_parent"
+            android:paddingEnd="30dp"
+            android:paddingStart="5dp"
+            android:maxLength="28"
+            android:id="@+id/editTextSearch"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:fontFamily="@font/arial_regular"
+            android:singleLine="true"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <ImageView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/btn_search"
+        app:tint="@color/black"
+        android:layout_marginEnd="30dp"
+        android:id="@+id/iconSearch"
+        android:layout_marginTop="10dp"
+        android:layout_width="30dp"
+        android:layout_height="50dp"/>
+
+    <TextView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topBar"
+        android:layout_marginTop="10dp"
+        android:text="Search Results"
+        android:textColor="@color/white"
+        android:fontFamily="@font/source_sanspro_bold"
+        android:paddingLeft="10dp"
+        android:id="@+id/textSearchresult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textSearchresult"
+        android:layout_marginTop="5dp"
+        android:id="@+id/recyclerSearch"
+        android:layout_width="match_parent"
+        android:paddingBottom="70dp"
+        android:layout_height="wrap_content"/>
+
+    <ProgressBar
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/progressSearch"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

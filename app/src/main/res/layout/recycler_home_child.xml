@@ -7,7 +7,7 @@
         android:layout_height="wrap_content">
     
     <RelativeLayout
-        android:background="@color/newbackground"
+        android:background="@color/lcolor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -45,7 +45,7 @@
            android:clipToPadding="false"
            android:paddingTop="14dp"
            android:paddingBottom="14dp"
-           android:background="@color/newbackground"
+           android:background="@color/lcolor"
            android:layout_width="match_parent"
            android:layout_height="wrap_content">
 

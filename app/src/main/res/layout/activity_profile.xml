@@ -5,18 +5,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/lcolor"
     tools:context=".ProfileActivity">
 
 
-    <ImageView
+    <TextView
+        android:id="@+id/titleLMS"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_gravity="start"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="0dp"
+        android:fontFamily="@font/rowdies_regular"
+        android:text="LMS"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src=""
-        android:id="@+id/imgLogo"
-        android:layout_marginStart="10dp"
-        android:layout_width="120dp"
-        android:layout_height="60dp"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,20 +36,11 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgLogo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:background="#0A1014"
-        android:layout_width="0dp"
-        android:layout_height="0dp"/>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="100dp"
         android:layout_width="300dp"
         android:id="@+id/constraintLayout"
-        android:background="@color/black"
+        android:background="@color/lcolor"
         android:layout_height="wrap_content">
         <RelativeLayout
             android:id="@+id/rel_profileImage"
@@ -197,11 +194,11 @@ android:fontFamily="@font/source_sans_pro_regular"
         android:fontFamily="@font/source_sanspro_bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="edit"
+        android:text="EDIT"
         android:layout_marginTop="20dp"
         android:textSize="20sp"
         android:background="@drawable/button_shape"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         android:layout_width="90dp"
         android:gravity="center"

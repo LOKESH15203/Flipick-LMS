@@ -4,6 +4,13 @@ plugins {
 }
 
 android {
+
+    // Add compile options to enable deprecation warnings
+//    compileOptions {
+//        lint.warning
+//        "deprecation"
+//    }
+
     namespace = "com.example.flipicklms"
     compileSdk = 34
 
